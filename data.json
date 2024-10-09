@@ -1,0 +1,56 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "seller1",
+      "email": "seller1@example.com",
+      "password": "password",
+      "role": "seller"
+    },
+    {
+      "id": 2,
+      "username": "buyer1",
+      "email": "buyer1@example.com",
+      "password": "password",
+      "role": "buyer"
+    }
+  ],
+  "auctions": [
+    {
+      "id": 1,
+      "item": "Antique Vase",
+      "description": "A beautiful antique vase.",
+      "currentBid": 100,
+      "startingPrice": 80,
+      "sellerId": "seller123",
+      "isActive": true,
+      "bids": [
+        {
+          "bidderId": "bidder001",
+          "amount": 120,
+          "bidTime": "2024-10-09T12:30:00Z"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "item": "Vintage Clock",
+      "description": "An elegant vintage clock.",
+      "currentBid": 150,
+      "startingPrice": 120,
+      "sellerId": "seller124",
+      "isActive": true,
+      "bids": []
+    },
+    {
+      "id": 3,
+      "item": "Rare Painting",
+      "description": "A stunning rare painting.",
+      "currentBid": 500,
+      "startingPrice": 450,
+      "sellerId": "seller125",
+      "isActive": true,
+      "bids": []
+    }
+  ]
+}

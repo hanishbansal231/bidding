@@ -1,0 +1,17 @@
+<app-auctions></app-auctions>
+
+<div class="auction-list">
+    <div class="auction-item" *ngFor="let auction of auctions">
+      <h3 (click)="select(auction)">{{ auction.item }}</h3>
+      <p>{{ auction.description }}</p>
+      <p>Current Bid: {{ auction.currentBid }}</p>
+      <p [ngClass]="{ 'status': auction.isActive, 'finalized': !auction.isActive }">
+        Status: {{ auction.isActive ? 'Active' : 'Finalized' }}
+      </p>
+    </div>
+  </div>
+  
+
+  <!-- Pass the selected auction to the BidderComponent -->
+  <app-bidder [auction]="selectedAuction"></app-bidder>
+  

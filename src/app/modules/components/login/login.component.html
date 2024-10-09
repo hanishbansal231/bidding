@@ -1,0 +1,30 @@
+<div class="login-wrapper">
+    <div class="login-box">
+      <h2 class="heading">Login</h2>
+      <form class="form-wrapper" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        
+        <div class="coolinput">
+          <label for="email" class="text">Email:</label>
+          <input type="email" id="email" formControlName="email" class="input" required>
+          <div *ngIf="loginForm.get('email')?.invalid && (loginForm.get('email')?.touched || loginForm.get('email')?.dirty)">
+            <small *ngIf="loginForm.get('email')?.errors?.['required']" class="error">Email is required.</small>
+            <small *ngIf="loginForm.get('email')?.errors?.['email']" class="error">Invalid email format.</small>
+          </div>
+        </div>
+  
+        <div class="coolinput">
+          <label for="password" class="text">Password:</label>
+          <input type="password" id="password" formControlName="password" class="input" required>
+          <div *ngIf="loginForm.get('password')?.invalid && (loginForm.get('password')?.touched || loginForm.get('password')?.dirty)">
+            <small *ngIf="loginForm.get('password')?.errors?.['required']" class="error">Password is required.</small>
+            <small *ngIf="loginForm.get('password')?.errors?.['minlength']" class="error">Password must be at least 6 characters long.</small>
+          </div>
+        </div>
+  
+        <div class="button-wrapper">
+          <button class="button" type="submit" [disabled]="loginForm.invalid">Login</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  

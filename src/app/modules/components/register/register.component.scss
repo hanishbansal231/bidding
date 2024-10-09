@@ -1,0 +1,121 @@
+.coolinput {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    position: static;
+    width: 100%;
+    max-width: 100%; // Maximum width of input fields
+  
+    label.text {
+      font-size: 0.75rem;
+      color: rgb(234, 179, 107);
+      font-weight: 700;
+      position: relative;
+      top: 0.5rem;
+      margin: 0 0 0 7px;
+      padding: 0 3px;
+      background: #FFF;
+      width: fit-content; // Width of label adjusts to content
+    }
+  
+    input[type="text"].input, 
+    input[type="email"].input,
+    input[type="password"].input,
+    select.input {
+      padding: 15px 10px;
+      font-size: 0.75rem;
+      border: 2px rgb(234, 179, 107) solid;
+      border-radius: 5px;
+      background: #FFF;
+      width: 100%; // Ensure full width
+  
+      &:focus {
+        outline: none; // Remove default outline
+      }
+    }
+  }
+  
+  ::ng-deep {
+    .register-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      max-height: 80vh;
+  
+      .register-box {
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        width: 100%;
+        max-width: 60%;
+        padding: 20px;
+        border-radius: 10px;
+
+        .heading{
+            text-align: center;
+            text-transform: uppercase;
+            font-size: 30px;
+            font-weight: bold;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: rgb(234, 179, 107);
+        }
+  
+        .form-wrapper {
+          width: 100%;
+          .button-wrapper{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+              .button {
+                background-color: #FFFFFF;
+                border: 0;
+                border-radius: .5rem;
+                box-sizing: border-box;
+                color: #111827;
+                font-family: "Inter var",ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+                font-size: .875rem;
+                font-weight: 600;
+                line-height: 1.25rem;
+                padding: .75rem 1rem;
+                text-align: center;
+                text-decoration: none #D1D5DB solid;
+                text-decoration-thickness: auto;
+                box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+                cursor: pointer;
+                user-select: none;
+                -webkit-user-select: none;
+                touch-action: manipulation;
+              
+                &:hover{
+                  background-color: rgb(249,250,251);
+                }
+                &:focus {
+                  outline: 2px solid transparent;
+                  outline-offset: 2px;
+                }
+                &:focus-visible {
+                  box-shadow: none;
+                }
+              }
+          }
+        }
+      }
+    }
+  
+    @media (max-width: 768px) {
+      .register-wrapper {
+        .register-box {
+          max-width: 80%;
+        }
+      }
+    }
+  
+    @media (max-width: 500px) {
+      .register-wrapper {
+        .register-box {
+          max-width: 90%;
+        }
+      }
+    }
+  }
+  

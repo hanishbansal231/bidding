@@ -1,0 +1,16 @@
+<div *ngIf="auction">
+    <h2>{{ auction.item }}</h2>
+    <p>{{ auction.description }}</p>
+    <p>Current Bid: {{ auction.currentBid }}</p>
+    <p>Status: {{ auction.isActive ? 'Active' : 'Finalized' }}</p>
+  
+    <div *ngIf="!isBiddingRestricted">
+      <input type="number" placeholder="Enter your bid amount" #bidInput>
+      <button (click)="placeBid(bidInput.value)">Place Bid</button>
+    </div>
+  
+    <div *ngIf="isBiddingRestricted">
+      <!-- <p>You can place another bid in {{ timeRemaining | secondsToMinutes }}.</p> -->
+    </div>
+  </div>
+  

@@ -1,0 +1,28 @@
+<div class="seller-actions">
+    <h2>Create Auction</h2>
+    <form [formGroup]="auctionForm" (ngSubmit)="createAuction()">
+        <input formControlName="item" placeholder="Item Name" required />
+        <input formControlName="description" placeholder="Item Description" required />
+        <input formControlName="startingPrice" type="number" placeholder="Starting Price" required />
+        <button type="submit" [disabled]="auctionForm.invalid">Create Auction</button>
+    </form>
+
+    <div class="auction-list">
+        <h2>Your Auctions</h2>
+        <div class="auction-wrapper">
+            <div *ngFor="let auction of auctions">
+                <div *ngIf="auction.sellerId === sellerId" class="auction-item">
+                    <h3>{{ auction.item }}</h3>
+                    <p>{{ auction.description }}</p>
+                    <p>Current Bid: {{ auction.currentBid }}</p>
+                    <p class="status">Status: {{ auction.isActive ? 'Active' : 'Finalized' }}</p>
+
+                    <button *ngIf="auction.isActive" (click)="finalizeAuction(auction.id)">Finalize Auction</button>
+                    <button *ngIf="auction.isActive" (click)="cancelAuction(auction.id)" class="cancel">Cancel
+                        Auction</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
